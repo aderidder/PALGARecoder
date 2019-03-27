@@ -1,0 +1,6 @@
+# Ignore iml files
+*.iml
+#exclude .idea directory
+/.idea
+/target
+
