@@ -172,10 +172,14 @@ class DecorCodebook {
     private void handleConceptElement(Element conceptElement) throws Exception{
         String palgaColName = getPalgaColNameAttributeValue(conceptElement);
         if(!palgaColName.equalsIgnoreCase("")){
-            Concept concept = createConcept(conceptElement, palgaColName);
-            palgaColNameToConceptMap.put(palgaColName, concept);
-            idToConceptMap.put(concept.getConceptId(), concept);
-            addTerminology(conceptElement);
+            String [] splitPalgaColNames = palgaColName.split(";");
+            for(String aPalgaColName:splitPalgaColNames) {
+                aPalgaColName = aPalgaColName.trim();
+                Concept concept = createConcept(conceptElement, aPalgaColName);
+                palgaColNameToConceptMap.put(aPalgaColName, concept);
+                idToConceptMap.put(concept.getConceptId(), concept);
+                addTerminology(conceptElement);
+            }
         }
     }
 

@@ -185,6 +185,10 @@ abstract class DefaultDataset implements InputData {
     /**
      * for each concept in the line that has a value, checks whether the max stored version is smaller than the
      * current version and if so, stores this line's version as the max for the concept
+     * This means that if we have two lines: v33, v1, v2, "", v4 AND v55, v1, "", v3, v4
+     * The max version for the variables will be v55, v33, v55, v55
+     * Idea is that columns may have appeared / disappeared and we'll use the max version to attempt to translate
+     * variables, but each variable itself will be translated with the same version
      * @param line list representation of the line
      */
     private void checkMaxVersionConcept(List<String> line){

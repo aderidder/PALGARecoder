@@ -287,6 +287,7 @@ class CodebookInfo{
     }
 
     List<String> getUniqueLanguages(){
+        Collections.sort(uniqueLanguagesList);
         return uniqueLanguagesList;
     }
 }

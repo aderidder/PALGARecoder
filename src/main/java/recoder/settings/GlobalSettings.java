@@ -31,7 +31,8 @@ public class GlobalSettings {
 
     // maybe read from file instead?
     static{
-        protocolNameToPrefixMap.put("colonbiopt", "snki-");
+        protocolNameToPrefixMap.put("colonbiopt", "ppcolbio-");
+        protocolNameToPrefixMap.put("colonrectum carcinoom", "ppcolcar-");
         protocolNameToPrefixMap.put("inherit_test", "s2nki-");
     }
 
