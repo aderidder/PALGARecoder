@@ -3,4 +3,5 @@
 #exclude .idea directory
 /.idea
 /target
-
+#other
+dependency-reduced-pom.xml
